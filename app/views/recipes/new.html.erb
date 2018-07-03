@@ -12,8 +12,8 @@
   </div>
 
   <div>
-    <%= r.label :cuisine, "Cozinha" %>
-    <%= r.text_field :cuisine %>
+    <%= r.label :cuisine_id, "Cozinha" %>
+    <%= r.collection_select(:cuisine_id, @cuisine, :id, :name) %>
   </div>
 
   <div>
