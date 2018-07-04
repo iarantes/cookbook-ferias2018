@@ -13,7 +13,7 @@
 
   <div>
     <%= r.label :cuisine_id, "Cozinha" %>
-    <%= r.collection_select(:cuisine_id, @cuisine, :id, :name) %>
+    <%= r.collection_select(:cuisine_id, @cuisines, :id, :name) %>
   </div>
 
   <div>
