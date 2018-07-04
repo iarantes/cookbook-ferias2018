@@ -1,4 +1,9 @@
 <h1>Nova Cozinha</h1>
+<p><%= alert %></p>
+
+<% @cuisine.errors.full_messages.each do |erro| %>
+  <p><%= erro %></p>
+<% end %>
 
 <%= form_for @cuisine do |f| %>
   <div>
@@ -7,10 +12,3 @@
   </div>
   <%= f.submit "Enviar" %>
 <% end %>
-
-<% if @error.present? %>
-  <p><%= @error %></p>
-<% end %>
-
-
-

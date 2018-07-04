@@ -9,12 +9,15 @@ class CuisinesController < ApplicationController
   end
 
   def create
-    @cuisine = Cuisine.create(params.require(:cuisine).permit(:name))
-    if @cuisine.valid?
+    @cuisine = Cuisine.new(params.require(:cuisine).permit(:name))
+    
+    if @cuisine.save
+      flash[:notice] = 'Cozinha cadastrada com sucesso'
       redirect_to cuisine_path(@cuisine)
     else
-      @error = "Você deve informar o nome da cozinha"
+      flash[:alert] = 'Não foi possível cadastrar a cozinha'
       render 'new'
     end
+
   end 
 end

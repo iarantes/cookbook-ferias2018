@@ -1,5 +1,7 @@
 <h1><%= @cuisine.name %></h1>
 
+<p><%= flash[:notice] %></p>
+
 <% if @recipes.present? %>
   <%= @recipes.each do |r| %>
     <h1><%= r.title %></h1>
