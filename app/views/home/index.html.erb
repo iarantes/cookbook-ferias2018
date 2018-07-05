@@ -7,7 +7,11 @@
 <h1>Cozinhas</h1>
 <% @cuisines.each do |c| %>
   <li><%= link_to(c.name, c) %></li>
+<% end %>
 
+<h1>Tipos de Receitas</h1>
+<% @recipe_types.each do |rt| %>
+  <li><%= link_to(rt.name, rt) %></li>
 <% end %>
 
 <h1>Receitas Cadastradas</h1>
