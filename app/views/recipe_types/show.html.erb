@@ -1,5 +1,7 @@
 <h1><%= @recipe_type.name %></h1>
 
+<p><%= notice %></p>
+
 <% if @recipes.present? %>
   <%= @recipes.each do |r| %>
     <h1><%= r.title %></h1>
