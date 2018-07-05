@@ -1,5 +1,11 @@
 <h1>Nova Receita</h1>
 
+<p><%= alert %></p>
+
+<% @recipe.errors.full_messages.each do |erro| %>
+  <p><%= erro %></p>
+<% end %>
+
 <%= form_for @recipe do |r| %>
   <div>
     <%= r.label :title, "Título" %>
