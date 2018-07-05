@@ -6,40 +6,40 @@
   <p><%= erro %></p>
 <% end %>
 
-<%= form_for @recipe do |r| %>
+<%= form_for @recipe do |f| %>
   <div>
-    <%= r.label :title, "Título" %>
-    <%= r.text_field :title %>
+    <%= f.label :title, "Título" %>
+    <%= f.text_field :title %>
   </div>
 
   <div>
-    <%= r.label :recipe_type, "Tipo da Receita" %>
-    <%= r.text_field :recipe_type %>
+    <%= f.label :recipe_type_id, "Tipo da Receita" %>
+    <%= f.collection_select(:recipe_type_id, @recipe_types, :id, :name) %>
   </div>
 
   <div>
-    <%= r.label :cuisine_id, "Cozinha" %>
-    <%= r.collection_select(:cuisine_id, @cuisines, :id, :name) %>
+    <%= f.label :cuisine_id, "Cozinha" %>
+    <%= f.collection_select(:cuisine_id, @cuisines, :id, :name) %>
   </div>
 
   <div>
-    <%= r.label :difficulty, "Dificuldade" %>
-    <%= r.text_field :difficulty %>
+    <%= f.label :difficulty, "Dificuldade" %>
+    <%= f.text_field :difficulty %>
   </div>
 
   <div>
-    <%= r.label :cook_time, "Tempo de Preparo" %>
-    <%= r.text_field :cook_time %>
+    <%= f.label :cook_time, "Tempo de Preparo" %>
+    <%= f.text_field :cook_time %>
   </div>
 
   <div>
-    <%= r.label :ingredients, "Ingredientes" %>
-    <%= r.text_area :ingredients %>
+    <%= f.label :ingredients, "Ingredientes" %>
+    <%= f.text_area :ingredients %>
   </div>
 
   <div>
-    <%= r.label :cook_method, "Como Preparar" %>
-    <%= r.text_area :cook_method %>
+    <%= f.label :cook_method, "Como Preparar" %>
+    <%= f.text_area :cook_method %>
   </div>
-  <%= r.submit "Enviar" %>
+  <%= f.submit "Enviar" %>
 <% end %>
