@@ -1,0 +1,6 @@
+<h1>Buscar Receita</h1>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Palavra chave") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Buscar") %>
+<% end %>

@@ -4,4 +4,7 @@ class HomeController < ApplicationController
     @cuisines = Cuisine.all
     @recipe_types = RecipeType.all
   end
+
+  def search
+  end
 end
