@@ -1,6 +1,23 @@
-<h1>Buscar Receita</h1>
+<h1>Buscar Receita por titulo</h1>
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Palavra chave") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Buscar") %>
 <% end %>
+
+
+<% if @recipe.present? %>
+  <p>Resultado da busca por: <%= params[:q] %></p>
+    <% @recipe.each do |r| %>
+    <p><h1><%= r.title %></h1></p>
+    <p><%= r.cuisine.name %></p>
+    <p><%= r.recipe_type.name %></p>
+    <p><%= r.cook_time %></p>
+    <p><%= r.ingredients %></p>
+    <p><%= r.cook_method %></p>
+  <% end %>
+<% end %>
+
+<%= link_to 'Voltar', root_path %>
+
+

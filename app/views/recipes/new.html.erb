@@ -6,7 +6,7 @@
   <p><%= erro %></p>
 <% end %>
 
-<%= form_for @recipe do |f| %>
+<%= form_for @recipe, html: { multipart: true } do |f| %>
   <div>
     <%= f.label :title, "Título" %>
     <%= f.text_field :title %>
@@ -41,5 +41,11 @@
     <%= f.label :cook_method, "Como Preparar" %>
     <%= f.text_area :cook_method %>
   </div>
+
+    <div>
+    <%= f.label :photo, "Inserir foto" %>
+    <%= f.file_field :photo %>
+  </div>
+
   <%= f.submit "Enviar" %>
 <% end %>

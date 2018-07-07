@@ -6,5 +6,7 @@ class HomeController < ApplicationController
   end
 
   def search
+    @recipe = Recipe.where("title LIKE ?", "%#{params[:q]}%")
+
   end
 end

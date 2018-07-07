@@ -18,6 +18,7 @@ feature 'Visitor register recipe' do
     fill_in 'Tempo de Preparo', with: '45'
     fill_in 'Ingredientes', with: 'Trigo para quibe, cebola, tomate picado, azeite, salsinha'
     fill_in 'Como Preparar', with: 'Misturar tudo e servir. Adicione limão a gosto.'
+    attach_file('Inserir foto', Rails.root.join('spec', 'support', 'Tabule.jpg'))
     click_on 'Enviar'
 
 
@@ -30,6 +31,7 @@ feature 'Visitor register recipe' do
     expect(page).to have_css('h3', text: 'Ingredientes')
     expect(page).to have_css('p', text: 'Trigo para quibe, cebola, tomate picado, azeite, salsinha')
     expect(page).to have_css('h3', text: 'Como Preparar')
+    expect(page).to have_css("img[src*='Tabule.jpg']")
     expect(page).to have_css('p', text:  'Misturar tudo e servir. Adicione limão a gosto.')
   end
 
